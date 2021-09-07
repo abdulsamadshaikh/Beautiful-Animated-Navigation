@@ -1,0 +1,527 @@
+/*  
+Project Name: Beautiful Animated Navigation
+Description: Beautiful Animated Navigation is made for those who want to save time instead of making it. Give me a thumbs-up, If you like it. Enjoy!
+Author: Abdul Samad
+Author URI: https://getabdulsamad.com/
+Tags: Mobile-friendly, All-Devices-Supported. 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f2f4f8;
+  color: #333;
+  -webkit-transition: color 0.6s ease-in-out;
+  -moz-transition: color 0.6s ease-in-out;
+  transition: color 0.6s ease-in-out;
+  margin: 0;
+  height: 100vh;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  -webkit-display: flex;
+  -moz-display: flex;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  overflow-x: hidden;
+  -webkit-transition: background 0.6s ease-in-out;
+  -moz-transition: background 0.6s ease-in-out;
+  transition: background 0.6s ease-in-out;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: #f2f4f8;
+}
+
+.container {
+  width: 1280px;
+  max-width: 100%;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #ecf0f1;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 15px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-transition: background 0.6s ease-in-out;
+  -moz-transition: background 0.6s ease-in-out;
+  transition: background 0.6s ease-in-out;
+}
+
+.nav-left {
+  max-width: 100%;
+  width: 50%;
+}
+
+.nav-right {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-justify-content: right;
+  -moz-justify-content: right;
+  justify-content: right;
+  -webkit-justify-content: flex-end;
+  -moz-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-gap: 10px;
+  -moz-gap: 10px;
+  gap: 10px;
+  max-width: 100%;
+  width: 50%;
+}
+
+.logo a {
+  font-size: 24px;
+}
+
+.navigation nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-justify-content: left;
+  -moz-justify-content: left;
+  justify-content: left;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-gap: 20px;
+  -moz-gap: 20px;
+  gap: 20px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.navigation nav.close ul {
+  display: none;
+}
+
+.navigation nav.close ul li {
+  transform: translateY(360deg);
+  opacity: 1;
+  transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+.navigation nav.close ul li {
+  transform: translateY(0deg);
+  opacity: 0;
+  transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+nav {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-justify-content: space-evenly;
+  -moz-justify-content: space-evenly;
+  justify-content: space-evenly;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-gap: 210px;
+  -moz-gap: 10px;
+  gap: 10px;
+  transition: width 0.6s linear;
+  background-color: #f2f4f8;
+  border-radius: 35px;
+  max-width: 100%;
+  width: 320px;
+  height: 100%;
+  padding: 0 10px;
+  height: 26px;
+}
+
+nav.close {
+  max-width: 100%;
+  width: 26px;
+  padding: 0;
+}
+
+nav.close ul {
+  transition: width 0.6s linear;
+  max-width: 0;
+  width: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  margin-left: 10px;
+  width: 60px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  background-color: #f2f4f8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 18px;
+  width: 18px;
+  left: 5px;
+  bottom: 4px;
+  background-color: #333;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #333;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #333;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(32px);
+  -ms-transform: translateX(32px);
+  transform: translateX(32px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#toggleBtn {
+  background: transparent;
+  border: 0;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -webkit-gap: 4px;
+  -moz-gap: 4px;
+  gap: 4px;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  opacity: 80%;
+}
+
+#toggleBtn:focus {
+  outline: none;
+}
+
+#toggleBtn .line {
+  background-color: #333;
+  height: 2px;
+  width: 18px;
+  transition: 0.6s linear;
+}
+
+nav.close #toggleBtn {
+  -webkit-gap: 5px;
+  -moz-gap: 5px;
+  gap: 5px;
+  width: 30px;
+}
+
+nav.close #toggleBtn .line-one {
+  transform: rotate(-765deg) translateY(5.5px);
+}
+
+nav.close #toggleBtn .line-two {
+  display: none;
+}
+
+nav.close #toggleBtn .line-three {
+  transform: rotate(765deg) translateY(-5.5px);
+}
+
+.content {
+  padding: 40px 10px;
+}
+
+.post {
+  border-bottom: 1px solid #ecf0f1;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-justify-content: left;
+  -moz-justify-content: left;
+  justify-content: left;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-flex-direction: row-reverse;
+  -moz-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-gap: 40px;
+  -moz-gap: 40px;
+  gap: 40px;
+}
+
+.post .post-img {
+  -webkit-flex: 4;
+  -moz-flex: 4;
+  flex: 4;
+  line-height: 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.post .post-content {
+  -webkit-flex: 8;
+  -moz-flex: 8;
+  flex: 8;
+}
+
+.post:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.post img {
+  max-width: 100%;
+  width: 600px;
+  border-radius: 5px;
+}
+
+.post h1 {
+  margin: 5px 0 0 0;
+}
+
+.post .meta {
+  color: #7b716f;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.post .meta a {
+  color: #7b716f;
+  text-decoration: none;
+}
+
+.post .meta a:hover {
+  color: #2f2b36;
+  text-decoration: none;
+}
+
+.post .meta a:focus {
+  color: #2f2b36;
+  text-decoration: none;
+}
+
+.post .meta .separator {
+  margin: 0 6px;
+}
+
+.post p {
+  line-height: 1.5;
+}
+
+.post .readmore {
+  background-color: #ecf0f1;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 20px;
+  display: block;
+  text-align: center;
+  width: 140px;
+  font-weight: 500;
+  border-radius: 35px;
+  margin-top: 40px;
+  -webkit-transition: background 0.6s ease;
+  -moz-transition: background 0.6s ease;
+  transition: background 0.6s ease;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.post .readmore:hover {
+  background-color: #333;
+  color: #ecf0f1;
+}
+
+footer {
+  background-color: #ecf0f1;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 15px;
+  text-align: center;
+  -webkit-transition: background 0.6s ease-in-out;
+  -moz-transition: background 0.6s ease-in-out;
+  transition: background 0.6s ease-in-out;
+}
+
+footer p {
+  opacity: 0.8;
+}
+
+/*** Dark Mode ***/
+body.dark-mode header {
+  background-color: #404040;
+  color: #f2f4f8;
+}
+
+body.dark-mode footer {
+  background-color: #404040;
+  color: #f2f4f8;
+}
+
+body.dark-mode nav {
+  background-color: #333;
+  color: #f2f4f8;
+}
+
+body.dark-mode a {
+  color: #f2f4f8;
+}
+
+body.dark-mode #toggleBtn .line {
+  background-color: #f2f4f8;
+}
+
+body.dark-mode .slider:before {
+  background-color: #f2f4f8;
+}
+
+body.dark-mode .post {
+  border-color: #404040;
+}
+
+body.dark-mode .post .readmore {
+  background-color: #404040;
+  color: #ecf0f1;
+}
+
+body.dark-mode .post .readmore:hover {
+  background-color: #000;
+}
+
+body.dark-mode .post .meta a:hover {
+  color: #000;
+}
+
+@media only screen and (max-width: 992px) {
+  .nav-left {
+    width: 25%;
+  }
+  .nav-right {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .post {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-gap: 10px;
+    -moz-gap: 10px;
+    gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  header {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    text-align: center;
+    -webkit-gap: 10px;
+    -moz-gap: 10px;
+    gap: 10px;
+    padding-bottom: 20px;
+  }
+  .nav-right {
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-right {
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    flex-direction: column;
+  }
+  nav.close {
+    width: 60px;
+  }
+  .switch {
+    margin-left: 0;
+  }
+}
