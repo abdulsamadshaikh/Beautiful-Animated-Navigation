@@ -18,12 +18,7 @@ toggleBtn.addEventListener('click', () => {
 })
 
 switchBtn.addEventListener('click', () => {
-    if (checkBox.checked == true){
-        body.classList.remove('dark-mode')
-    } else {
-        
-        body.classList.add('dark-mode')
-    }
+    body.classList.toggle('dark-mode')
 })
 
 function onLoadCheck () {
